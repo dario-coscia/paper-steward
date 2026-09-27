@@ -52,4 +52,5 @@ agent; scripts supply objective checks; hooks enforce selected lifecycle checks.
 Built-in filesystem, search, shell, and Git tools are sufficient. Compilation and
 numerical experiments do not verify the mathematical truth of the paper.
 
-No remote has been created or pushed. The six annotated snapshots remain intact.
+Published at https://github.com/dario-coscia/paper-steward with all stage branches
+and annotated tags. The six annotated snapshots remain intact.
