@@ -54,3 +54,18 @@ numerical experiments do not verify the mathematical truth of the paper.
 
 Published at https://github.com/dario-coscia/paper-steward with all stage branches
 and annotated tags. The six annotated snapshots remain intact.
+
+## Try the matched benchmark
+
+This branch adds `benchmark/evaluate.py` and [benchmark instructions](benchmark/README.md).
+The evaluator prepares identical broken papers with and without Paper Steward
+customization, then independently scores repairs, readiness, safety, reporting
+and efficiency. The original stage branches and tags remain unchanged.
+
+```sh
+python benchmark/evaluate.py prepare --runs /tmp/paper-benchmark-01 --pairs 1
+```
+
+Follow `benchmark/README.md` to run fresh agent sessions and score their results.
+Run artifacts are stored outside this repository; no model run or successful
+benchmark result is fabricated.
