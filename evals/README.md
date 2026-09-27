@@ -19,3 +19,8 @@ At Stage 3 and Stage 4, health exits 1 intentionally. Expect broken references,
 citations, figure inclusion, a pending marker, omitted section, auxiliary artifact,
 macro inconsistency and freshness warnings. Compilation also fails on the missing
 figure. Do not hide those failures; compare them with Stage 5.
+
+Final-stage experiment evals check recurrence parameters, bisection brackets,
+exact decimal error identity samples, and tracked CSV/table consistency. Hook
+evals check direct protected patches, valid source patches, stop continuation,
+post-edit findings and JSON stdin/output contracts. No live-model score is claimed.

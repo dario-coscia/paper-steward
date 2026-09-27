@@ -1,6 +1,8 @@
 """Deterministic binary64 iterates; errors measured against an 80-digit root."""
 from pathlib import Path
 import csv
+import hashlib
+import json
 from decimal import Decimal, localcontext
 import os
 import tempfile
@@ -52,6 +54,9 @@ def main():
     ax.legend()
     fig.savefig(ROOT / OUTPUTS[1], metadata={"CreationDate": None, "ModDate": None})
     plt.close(fig)
+    names = ("experiments/generate_convergence.py", *OUTPUTS)
+    hashes = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in names}
+    (ROOT / "paper/generated/provenance.json").write_text(json.dumps(hashes, indent=2, sort_keys=True) + "\n")
     print("Generated CSV, table, and PDF from 21 deterministic rows.")
 if __name__ == "__main__":
     main()

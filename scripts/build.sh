@@ -1,11 +1,13 @@
 #!/bin/sh
 set -eu
+# The portable C locale avoids host-specific Perl locale warnings.
+export LC_ALL=C
 ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 OUT=${PAPER_BUILD_DIR:-"$ROOT/build"}
 mkdir -p "$OUT"
 cd "$ROOT/paper"
 if command -v latexmk >/dev/null 2>&1; then
-    latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir="$OUT" main.tex
+    BIBINPUTS="$ROOT/paper:" latexmk -bibfudge -pdf -interaction=nonstopmode -halt-on-error -outdir="$OUT" main.tex
 elif command -v pdflatex >/dev/null 2>&1 && command -v bibtex >/dev/null 2>&1; then
     pdflatex -interaction=nonstopmode -halt-on-error -output-directory="$OUT" main.tex
     (cd "$OUT" && BIBINPUTS="$ROOT/paper:" bibtex main)

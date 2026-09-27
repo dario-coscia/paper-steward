@@ -9,17 +9,12 @@ comparisons: Newton requires a division while bisection evaluates a sign.
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{rrr}\toprule
-$n$ & Newton iterate & Absolute error\\\midrule
-0 & 2.000000 & 0.586\\
-1 & 1.600000 & 0.186\\
-2 & 1.416667 & 0.00245\\\bottomrule
-\end{tabular}
-\caption{Initial Newton iterates (rounded).}\label{tab:iterates}
+\input{generated/table}
+\caption{Initial computed iterates and absolute errors (rounded).}\label{tab:iterates}
 \end{table}
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.85\linewidth]{figures/newton-convergence.pdf}
+\includegraphics[width=.85\linewidth]{figures/convergence.pdf}
 \caption{Computed absolute errors on a logarithmic vertical axis.}
 \label{fig:convergence}
 \end{figure}

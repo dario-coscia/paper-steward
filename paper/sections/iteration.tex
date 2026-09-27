@@ -6,7 +6,7 @@ x_{n+1}=x_n-\frac{x_n^2-2}{2x_n}
        =\frac12\left(x_n+\frac{2}{x_n}\right),\qquad x_0=2.
 \end{equation}
 All denominators are nonzero once positivity has been established. Write
-$\alpha=\sqrt{2}$ for the positive root. The iteration balances $x_n$ with
+$\alpha=\rtwo$ for the positive root. The iteration balances $x_n$ with
 $2/x_n$: when the first is above $\alpha$, the second is below it.
 Their arithmetic mean nevertheless stays above $\alpha$, as the identity in
 the next section shows.
@@ -15,4 +15,3 @@ The first two updates are $x_1=3/2$ and $x_2=17/12$. These rational values
 already suggest rapid improvement, but a few examples cannot establish
 convergence. The proof must show that every subsequent update is defined and
 that the only possible limit is the desired root.
-% TODO: reconcile notation with shared macros before submission.
