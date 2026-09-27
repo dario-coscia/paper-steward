@@ -1,0 +1,6 @@
+[project]
+name = "paper-steward"
+version = "1.0.0"
+description = "A workshop in evidence-based LaTeX maintenance"
+requires-python = ">=3.10"
+dependencies = ["matplotlib>=3.7,<4"]

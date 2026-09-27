@@ -1,0 +1,19 @@
+\section{Introduction}\label{sec:introduction}
+Computing $\rtwo$ is an elementary problem with a useful lesson about numerical
+algorithms: an update rule, a convergence proof, and an implementation are three
+different objects. The polynomial $f(x)=x^2-2$ has a unique positive zero, and
+both Newton's method and bisection locate it. Their error reduction mechanisms
+are very different. Newton uses a derivative to make rapid local progress;
+bisection maintains an interval guaranteed to contain a root.
+
+The purpose of this note is to make those mechanisms explicit without relying
+on a general convergence theorem. We work in exact real arithmetic for the
+analysis, then use binary64 arithmetic for a small illustration. Standard
+background on root finding can be found in \cite{burden2015wrong,stoer2002}.
+Theorem~\ref{thm:root-convergence} establishes the main claim, and
+Section~\ref{sec:error} explains the quadratic rate.
+
+The example also serves as a compact research-project maintenance exercise.
+Its notation, cross-references, bibliography, source code, and derived figures
+must stay synchronized. A clean compilation checks document construction;
+it does not certify any mathematical assertion.

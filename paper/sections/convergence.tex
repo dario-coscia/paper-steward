@@ -1,0 +1,26 @@
+\section{Convergence theorem and proof}\label{sec:convergence}
+\begin{theorem}\label{thm:convergence}
+In exact real arithmetic, the sequence defined by \eqref{eq:newton} satisfies
+$x_n>\rtwo$ for every integer $n\geq0$, decreases strictly, and converges to $\rtwo$.
+\end{theorem}
+\begin{proof}
+Let $\alpha=\rtwo$. For any $x>0$, direct algebra using $\alpha^2=2$ gives
+\begin{equation}\label{eq:error-identity}
+\frac12\left(x+\frac{2}{x}\right)-\alpha
+=\frac{x^2-2\alpha x+\alpha^2}{2x}
+=\frac{(x-\alpha)^2}{2x}.
+\end{equation}
+Since $x_0=2>\alpha$, induction shows that each iterate is positive and strictly
+above $\alpha$. In particular, the recurrence is defined at every step.
+Moreover,
+\[x_{n+1}-x_n=\frac{2-x_n^2}{2x_n}<0.\]
+Thus the sequence is strictly decreasing and bounded below. It has a limit
+$L\geq\alpha>0$. Continuity of $x\mapsto (x+2/x)/2$ on the positive real axis
+allows passage to the limit in the recurrence, yielding
+$L=(L+2/L)/2$. Consequently $L^2=2$, and positivity forces $L=\alpha$.
+\end{proof}
+The starting value is part of the statement. A positive start below the root
+need not decrease on the first step; a zero start is not defined. More generally,
+\eqref{eq:error-identity} puts every positive start other than the root strictly
+above the root after one step. We keep $x_0=2$ fixed throughout this note to
+avoid mixing this broader observation with the experiment's parameters.

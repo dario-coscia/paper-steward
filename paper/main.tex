@@ -1,0 +1,26 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs}
+\usepackage[hidelinks]{hyperref}
+\input{macros}
+\title{Quadratic Convergence of Newton's Method\\for the Square Root of Two}
+\author{Paper Steward Workshop}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+A familiar square-root computation gives a concrete setting in which to distinguish
+an exact convergence proof from a finite-precision experiment. Starting at two,
+Newton's iteration stays above the positive root, decreases strictly, and converges
+quadratically. We derive an exact error identity and compare the iterates with
+bisection using reproducible data. The experiment illustrates the analysis while
+also exposing the precision limit of floating-point arithmetic.
+\end{abstract}
+\input{sections/introduction}
+\input{sections/iteration}
+\input{sections/convergence}
+\input{sections/error}
+\input{sections/numerics}
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

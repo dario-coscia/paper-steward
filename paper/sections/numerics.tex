@@ -1,0 +1,35 @@
+\section{Numerical illustration}\label{sec:numerics}
+The script \texttt{experiments/generate\_convergence.py} computes 21 binary64
+Newton iterates and 21 bisection midpoints. At index zero the Newton value is
+$2$ and the bisection value is the midpoint $1.5$ of $[1,2]$. After each
+midpoint evaluation, the sign of $x^2-2$ determines which half interval is
+retained. In exact arithmetic the interval length before index $n$ is $2^{-n}$,
+so its midpoint error is at most $2^{-n-1}$. Equal indices are not equal-cost
+comparisons: Newton requires a division while bisection evaluates a sign.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrr}\toprule
+$n$ & Newton iterate & Absolute error\\\midrule
+0 & 2.000000 & 0.586\\
+1 & 1.600000 & 0.186\\
+2 & 1.416667 & 0.00245\\\bottomrule
+\end{tabular}
+\caption{Initial Newton iterates (rounded).}\label{tab:iterates}
+\end{table}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.85\linewidth]{figures/newton-convergence.pdf}
+\caption{Computed absolute errors on a logarithmic vertical axis.}
+\label{fig:convergence}
+\end{figure}
+
+Errors are measured against an 80-digit decimal evaluation of $\rtwo$, using
+the exact decimal representation of each computed binary64 value. This avoids
+mistaking equality with a rounded binary64 reference for exact accuracy.
+For plotting only, errors smaller than $10^{-18}$ are clipped to $10^{-18}$;
+the CSV retains the measured errors. The finite reference precision is far
+below the scale of this experiment. Newton reaches a rounding plateau near
+$10^{-16}$ while bisection continues a slower reduction over these indices.
+Neither the observed speed nor the plateau proves the theorem. They illustrate
+the exact analysis and the limitations of its floating-point realization.
