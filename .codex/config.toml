@@ -1,0 +1,5 @@
+# Repository-local defaults; user/managed policy may take precedence.
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+[features]
+hooks = true

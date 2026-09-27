@@ -1,0 +1,40 @@
+{
+  "description": "Paper Steward read-only lifecycle checks",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hook_guard.py\"",
+            "timeout": 5
+          }
+        ],
+        "matcher": "Bash|apply_patch|Edit|Write"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hook_guard.py\"",
+            "timeout": 30
+          }
+        ],
+        "matcher": "apply_patch|Edit|Write"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hook_guard.py\"",
+            "timeout": 50
+          }
+        ]
+      }
+    ]
+  }
+}

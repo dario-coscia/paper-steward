@@ -16,3 +16,5 @@ else
     exit 2
 fi
 printf 'Built %s/main.pdf\n' "$OUT"
+
+python3 "$ROOT/scripts/build_evidence.py" record "$OUT"
